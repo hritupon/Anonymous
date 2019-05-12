@@ -17,4 +17,7 @@
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    <color name="border">##dfe1e5</color>
+
 </resources>
