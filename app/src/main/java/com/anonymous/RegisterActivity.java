@@ -59,19 +59,20 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void createNewAccount() {
-        final Animation shake = AnimationUtils.loadAnimation(RegisterActivity.this, R.anim.shake);
+        final Animation shake = AnimationUtils.loadAnimation(RegisterActivity.this,
+                                                             R.anim.shake);
 
         String email = userEmail.getText().toString();
         String password = userPassword.getText().toString();
 
         if(TextUtils.isEmpty(email)||!Util.isEmailValid(email)) {
-            Toast.makeText(this, "Please enter email...", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Please enter email...", Toast.LENGTH_SHORT).show();
             findViewById(R.id.register_email).startAnimation(shake);
 
             return;
         }
         if(TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter password...", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Please enter password...", Toast.LENGTH_SHORT).show();
             findViewById(R.id.register_password).startAnimation(shake);
 
             return;
@@ -89,12 +90,16 @@ public class RegisterActivity extends AppCompatActivity {
                             rootRef.child("Users").child(currentUserId).setValue("null");
                             sendUserToMainActivity();
                             progressDialog.dismiss();
-                            Toast.makeText(RegisterActivity.this, "Account created successfully...", Toast.LENGTH_LONG);
+                            Toast.makeText(RegisterActivity.this,
+                                      "Account created successfully...",
+                                            Toast.LENGTH_LONG).show();
 
                         } else {
                             progressDialog.dismiss();
                             String message = task.getException().toString();
-                            Toast.makeText(RegisterActivity.this, "Error: "+message, Toast.LENGTH_LONG);
+                            Toast.makeText(RegisterActivity.this,
+                                      "Error: "+message,
+                                           Toast.LENGTH_LONG).show();
                             findViewById(R.id.register_password).startAnimation(shake);
                         }
                     }
