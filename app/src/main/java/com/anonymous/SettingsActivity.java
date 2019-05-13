@@ -42,6 +42,8 @@ public class SettingsActivity extends AppCompatActivity {
         currentUserId = mAuth.getCurrentUser().getUid();
         initializeFields();
 
+        userName.setVisibility(View.INVISIBLE);
+
         updateAccountSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +131,7 @@ public class SettingsActivity extends AppCompatActivity {
                     userStatus.setText(retrievedStatus);
 
                 } else {
+                    userName.setVisibility(View.VISIBLE);
                     Toast.makeText(SettingsActivity.this,
                             "Please set your profile information.",
                             Toast.LENGTH_SHORT).show();
