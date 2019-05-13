@@ -44,18 +44,20 @@
         android:layout_alignParentLeft="true">
         <EditText
             android:id="@+id/input_group_message"
-            android:layout_width="360dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:hint="Type your message here..."
             android:padding="17dp"
             android:background="@drawable/inputs"/>
         <ImageButton
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/send_message_button"
-            android:layout_width="50dp"
+            android:layout_width="47dp"
             android:layout_height="wrap_content"
-            android:minHeight="60dp"
-            android:src="@drawable/ic_send"
-            android:background="@drawable/white_buttons"/>
+            android:minHeight="50dp"
+            android:src="@drawable/ic_white_send"
+            android:background="@drawable/buttons"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child("name").exists()){
-                    Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_LONG).show();
                 } else {
                     sendUserToSettingsActivity();
                 }
