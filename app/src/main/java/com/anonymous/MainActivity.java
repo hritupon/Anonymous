@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             requestNewGroup();
         }
         else if(item.getItemId()==R.id.main_find_friends_options){
-
+            sendUserToFindFriendsActivity();
         }
         return true;
     }
@@ -127,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(settingsIntent);
         finish();
     }
+
+    private void sendUserToFindFriendsActivity() {
+        Intent findFriendsIntent = new Intent(MainActivity.this, FindFriendsActivity.class);
+        startActivity(findFriendsIntent);
+    }
+
 
     private void requestNewGroup() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,
