@@ -53,7 +53,7 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
             case 2:
                 return "Contacts";
 
-            case 4:
+            case 3:
                 return "Requests";
 
             default:
