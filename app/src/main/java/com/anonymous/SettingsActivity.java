@@ -44,7 +44,6 @@ public class SettingsActivity extends AppCompatActivity {
     private DatabaseReference rootRef;
     private StorageReference userProfileImagesRef;
     private ProgressDialog loadingBar;
-    private String retrievedProfileImage="";
 
     private static final int GalleryPick=1;
 
@@ -183,15 +182,11 @@ public class SettingsActivity extends AppCompatActivity {
             return;
         }
 
-        HashMap<String, String> profileMap = new HashMap<>();
+        HashMap<String, Object> profileMap = new HashMap<>();
         profileMap.put("uid", currentUserId);
         profileMap.put("name",setUserName);
         profileMap.put("status", setUserStatus);
-        if(!TextUtils.isEmpty(retrievedProfileImage)){
-            profileMap.put("image", retrievedProfileImage);
-        }
-
-        rootRef.child("Users").child(currentUserId).setValue(profileMap)
+        rootRef.child("Users").child(currentUserId).updateChildren(profileMap)
          .addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -225,7 +220,7 @@ public class SettingsActivity extends AppCompatActivity {
                 if(dataSnapshot.exists() && dataSnapshot.hasChild("name") && dataSnapshot.hasChild("image")) {
                     String retrievedUserName = dataSnapshot.child("name").getValue().toString();
                     String retrievedStatus = dataSnapshot.child("status").getValue().toString();
-                    retrievedProfileImage = dataSnapshot.child("image").getValue().toString();
+                    String retrievedProfileImage = dataSnapshot.child("image").getValue().toString();
 
                     userName.setText(retrievedUserName);
                     userStatus.setText(retrievedStatus);
