@@ -26,6 +26,10 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
                 ContactsFragment contactsFragment = new ContactsFragment();
                 return contactsFragment;
 
+            case 3:
+                RequestsFragment requestsFragment = new RequestsFragment();
+                return requestsFragment;
+
             default:
                 return null;
         }
@@ -33,7 +37,7 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Nullable
@@ -48,6 +52,9 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
 
             case 2:
                 return "Contacts";
+
+            case 4:
+                return "Requests";
 
             default:
                 return null;
