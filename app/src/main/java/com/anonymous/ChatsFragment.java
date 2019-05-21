@@ -53,7 +53,7 @@ public class ChatsFragment extends Fragment {
         currentUserId = mAuth.getCurrentUser().getUid();
 
         chatsRef = FirebaseDatabase.getInstance().getReference().child("Contacts").child(currentUserId);
-        chatsRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
         chatsList = (RecyclerView) privateChatsView.findViewById(R.id.chats_list);

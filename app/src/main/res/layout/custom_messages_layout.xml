@@ -39,6 +39,7 @@
         android:textSize="14sp"
         android:padding="10dp"
         android:textStyle="normal"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:layout_marginRight="5dp"/>
 
 </RelativeLayout>

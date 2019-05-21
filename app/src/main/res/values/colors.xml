@@ -19,5 +19,6 @@
     <color name="black">#000000</color>
 
     <color name="border">#dfe1e5</color>
+    <color name="azure_radiance">#2F7CFB</color>
 
 </resources>
