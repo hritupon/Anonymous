@@ -55,7 +55,7 @@ public class RequestsFragment extends Fragment {
         requestsRragmentView = inflater.inflate(R.layout.fragment_requests, container, false);
         usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
         chatRequestsRef = FirebaseDatabase.getInstance().getReference().child("Chat Requests");
-        chatRequestsRef = FirebaseDatabase.getInstance().getReference().child("Contacts");
+        contactsRef = FirebaseDatabase.getInstance().getReference().child("Contacts");
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
 
